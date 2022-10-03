@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+    width: 30px;
+    background-color: red;
+    color:green;
+    position: absolute;
+    top: 370px;
+    left: 10px;
+}
+#box2{
+    width: 30px;
+    background-color: blue;
+    position: absolute;
+    top: 368px;
+    left: 10px;
+}
+    </style>
+</head>
+<body>
+    <img src="https://www.howtofixx.com/wp-content/uploads/2019/12/Snake-and-Ladder-Template-1.png" width = "400px" alt="">
+    <form action=start>
+    <input type = submit name = submit value="roll">
+    <div id = "box1">p1</div>
+    <div id = "box2">p2</div>
+</body>
+</html>
+<script>
+    var player1Score = 7;
+    var dice = 6;
+    var t = 0;
+    var left = 10;
+    var temp = t;
+    var a = document.getElementById("box2");
+    for(let k = 0;k<4;k++){
+    for(let i = 1;i<=dice;i++){
+        if(player1Score % 10 == 0){
+            t -= temp + 40;
+        a.style.transform = "translate("+left+"px,"+(t)+"px)";
+        }
+        else if((parseInt(player1Score/10))%2==0)
+        {
+            left+=40;
+            a.style.transform = "translate("+(left) +"px,"+t+"px)";
+        }
+        else{
+            left-=40;
+            a.style.transform = "translate("+(left) +"px,"+t+"px)";
+        }
+        player1Score++;
+    }
+}
+</script>
